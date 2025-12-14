@@ -76,16 +76,21 @@ From the workspace root (the folder that contains `src/`):
 ```bash
 colcon build
 source install/setup.bash
+```
 
 ---
 
 ## Run (recommended order)
 
 1) Start UI node (subscriber)
+```bash
 ros2 run moodlamp_sensors ui_node
+```
 
-2) Start music player node
+3) Start music player node
+```bash
 ros2 run moodlamp_sensors music_player_node
+```
 
 
 If your music folder is not mood_music/ at workspace root, override the parameter:
@@ -93,12 +98,17 @@ If your music folder is not mood_music/ at workspace root, override the paramete
 ros2 run moodlamp_sensors music_player_node --ros-args -p music_dir:=/path/to/mood_music
 
 3) Start mood fusion node
+```bash
 ros2 run moodlamp_sensors mood_fusion_node
+```
 
-4) Start sensor bridge node (reads Arduino serial)
+5) Start sensor bridge node (reads Arduino serial)
+```bash
 ros2 run moodlamp_sensors sensor_bridge_node
+```
+---
 
-Arduino
+## Arduino
 
 Upload an Arduino sketch that prints sensor values over serial in a readable format.
 Example expected format:
