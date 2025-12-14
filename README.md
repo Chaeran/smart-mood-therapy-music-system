@@ -27,18 +27,34 @@ ROS2 nodes bridge the sensor data, infer a mood state, and play a corresponding 
 
 ## Repository Structure
 
-src/moodlamp_sensors/
-├─ moodlamp_sensors/
-│ ├─ sensor_bridge_node.py
-│ ├─ mood_fusion_node.py
-│ ├─ music_player_node.py
-│ └─ ui_node.py
-├─ package.xml
-├─ setup.py
-├─ setup.cfg
-├─ resource/
-└─ test/
-
+ros2_moodlamp_ws/
+├── src/
+│   └── moodlamp_sensors/
+│       ├── moodlamp_sensors/
+│       │   ├── __init__.py
+│       │   ├── sensor_bridge_node.py
+│       │   ├── mood_fusion_node.py
+│       │   ├── music_player_node.py
+│       │   └── ui_node.py
+│       ├── resource/
+│       │   └── moodlamp_sensors
+│       ├── test/
+│       │   ├── test_flake8.py
+│       │   ├── test_pep257.py
+│       │   └── test_copyright.py
+│       ├── package.xml
+│       ├── setup.py
+│       └── setup.cfg
+│
+├── mood_music/                # Local royalty-free audio files
+│   ├── relaxed.mp3
+│   ├── cozy.mp3
+│   ├── focus.mp3
+│   ├── energetic.mp3
+│   ├── too_hot.mp3
+│   └── too_cold.mp3
+│
+└── README.md
 
 ---
 
