@@ -36,14 +36,15 @@ class MusicPlayerNode(Node):
         )
         # Subscribe to current music from music_player_node
         self.current_music_pub = self.create_publisher(String, "current_music", 10)
-
-        # Parameters:
-        #  - music_dir: directory containing audio files
-        #  - player_cmd: command-line audio player (e.g. "ffplay" or "mpg123")
-        self.declare_parameter(
-            "music_dir",
-            "/home/lana/mood_music"  # TODO: change to your actual path
-        )
+        
+    	# Default music_dir = <workspace_root>/mood_music
+    	# assuming this file is:
+    	#   <ws>/src/moodlamp_music/moodlamp_music/music_player_node.py
+    	ws_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../"))
+    	default_music_dir = os.path.join(ws_dir, "mood_music")
+    
+    	self.declare_parameter("music_dir", default_music_dir)
+    	#  player_cmd: command-line audio player (e.g. "ffplay" or "mpg123")
         self.declare_parameter(
             "player_cmd",
             "ffplay"  # or "mpg123"
