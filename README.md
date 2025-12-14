@@ -27,6 +27,7 @@ ROS2 nodes bridge the sensor data, infer a mood state, and play a corresponding 
 
 ## Repository Structure
 
+```
 ros2_moodlamp_ws/
 ├── src/
 │   └── moodlamp_sensors/
@@ -55,6 +56,7 @@ ros2_moodlamp_ws/
 │   └── too_cold.mp3
 │
 └── README.md
+```
 
 ---
 
